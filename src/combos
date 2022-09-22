@@ -1,0 +1,25 @@
+import string
+
+def combos():
+    models = [1, 2]
+    channels = [1, 2, 3]
+    colors = [1, 2, 3, 4]
+    capacities = [1, 2, 3, 4]
+    country_first = ["a", "b"]
+    country_lowercase = [letter for letter in string.ascii_lowercase]
+    combo_counter = 0
+    for model in models:
+        for channel in channels:
+            for color in colors:
+                for capacity in capacities:
+                    for country in country_first:
+                        counter = 0
+                        for letter in country_lowercase:
+                            counter += 1
+                            combo_counter += 1
+                            print(f"{model}{channel}{color}{capacity}{country}{letter}")
+                            if counter >= 12 and country == "b":
+                                break
+    print(combo_counter)
+
+combos()
